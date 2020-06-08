@@ -5,8 +5,8 @@
   "description": "A simple framework for unity using the ECS paradigm but with unirx for fully reactive systems.",
   "unity": "2019.3",
   "dependencies": {
-    "com.bckworks.ecsrx": "git+https://github.com/BCKWorks/ecsrx.git#upm",
-    "com.bckworks.neuecc.unirx": "git+https://github.com/BCKWorks/UniRx.git#upm",
-    "com.bckworks.modesttree.zenject": "git+https://github.com/BCKWorks/Zenject.git#upm"
+    "com.bckworks.ecsrx": "https://github.com/BCKWorks/ecsrx.git#upm",
+    "com.bckworks.neuecc.unirx": "https://github.com/BCKWorks/UniRx.git#upm",
+    "com.bckworks.modesttree.zenject": "https://github.com/BCKWorks/Zenject.git#upm"
   }
 }
