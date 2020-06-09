@@ -8,5 +8,12 @@
     "com.bckworks.ecsrx": "https://github.com/BCKWorks/ecsrx.git#upm",
     "com.bckworks.neuecc.unirx": "https://github.com/BCKWorks/UniRx.git#upm",
     "com.bckworks.modesttree.zenject": "https://github.com/BCKWorks/Zenject.git#upm"
-  }
+  },
+  "samples": [
+    {
+      "displayName": "Examples",
+      "description": "EcsRx Unity Examples",
+      "path": "Samples~/Examples"
+    }
+  ]
 }
