@@ -101,7 +101,12 @@ namespace EcsRx.Collections.Database
 
             _onCollectionRemoved.OnNext(collection);
         }
-        
+
+        public bool IsCollection(int id)
+        {
+            return _collections.Contains(id);
+        }
+
         public IEnumerable<IEntity> GetEntitiesFor(IGroup group, int collectionId = EntityCollectionLookups.NoCollectionDefined)
         {
             if(group is EmptyGroup)

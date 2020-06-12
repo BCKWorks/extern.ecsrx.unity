@@ -81,6 +81,8 @@ namespace EcsRx.Collections.Database
         /// <param name="disposeEntities">if the entities should all be disposed too</param>
         void RemoveCollection(int id, bool disposeEntities = true);
 
+        bool IsCollection(int id);
+
         IEnumerable<IEntity> GetEntitiesFor(LookupGroup lookupGroup, params int[] collectionIds);
         IEnumerable<IEntity> GetEntitiesFor(IGroup group, params int[] collectionIds);
     }

@@ -44,6 +44,14 @@ namespace EcsRx.Extensions
             return entity;
         }
 
+        public static T AddComponentSafe<T>(this IEntity entity, T component) where T : class, IComponent, new()
+        {
+            if (entity.HasComponent<T>())
+                return component;
+            entity.AddComponents(component);
+            return component;
+        }
+
         /// <summary>
         /// Adds a component to the entity based on its type with default setup
         /// </summary>
