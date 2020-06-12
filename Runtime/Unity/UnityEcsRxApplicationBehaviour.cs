@@ -34,6 +34,8 @@ namespace EcsRx.Unity
         protected List<IEcsRxPlugin> _plugins { get; } = new List<IEcsRxPlugin>();
 
         protected abstract void ApplicationStarted();
+
+        public bool Started { get; private set; }
         
         public virtual void StartApplication()
         {
@@ -45,6 +47,8 @@ namespace EcsRx.Unity
             StartPluginSystems();
             StartSystems();
             ApplicationStarted();
+
+            Started = true;
         }
         
         public virtual void StopApplication()

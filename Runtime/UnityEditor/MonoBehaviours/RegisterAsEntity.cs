@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using EcsRx.Collections;
@@ -10,6 +11,7 @@ using EcsRx.Extensions;
 using EcsRx.Plugins.Views.Components;
 using EcsRx.Unity.MonoBehaviours;
 using EcsRx.UnityEditor.Extensions;
+using EcsRx.Zenject;
 using UnityEngine;
 using UnityEngine.Serialization;
 using Zenject;
@@ -18,20 +20,12 @@ namespace EcsRx.UnityEditor.MonoBehaviours
 {
     public class RegisterAsEntity : MonoBehaviour
     {
-        [Inject]
         public IEntityDatabase EntityDatabase { get; private set; }
 
         [FormerlySerializedAs("CollectionName")] 
         [SerializeField]
         public int CollectionId;
 
-        [SerializeField]
-        public List<string> Components = new List<string>();
-
-        [SerializeField]
-        public List<string> ComponentEditorState = new List<string>();
-
-        [Inject]
         public void RegisterEntity()
         {
             if (!gameObject.activeInHierarchy || !gameObject.activeSelf) { return; }
@@ -53,6 +47,22 @@ namespace EcsRx.UnityEditor.MonoBehaviours
             Destroy(this);
         }
 
+        IEnumerator Start()
+        {
+            while (EcsRxApplicationBehaviour.Instance == null)
+                yield return null;
+
+            while (!EcsRxApplicationBehaviour.Instance.Started)
+                yield return null;
+
+            while (EcsRxApplicationBehaviour.Instance.EntityDatabase == null)
+                yield return null;
+
+            EntityDatabase = EcsRxApplicationBehaviour.Instance.EntityDatabase;
+
+            RegisterEntity();
+        }
+
         private void SetupEntityBinding(IEntity entity, IEntityCollection entityCollection)
         {
             var entityBinding = gameObject.AddComponent<EntityView>();
@@ -62,24 +72,11 @@ namespace EcsRx.UnityEditor.MonoBehaviours
 
         private void SetupEntityComponents(IEntity entity)
         {
-            var componentsToRegister = new IComponent[Components.Count];
-            for (var i = 0; i < Components.Count; i++)
+            var components = GetComponents<IConvertToEntity>();
+            foreach (var component in components)
             {
-                var typeName = Components[i];
-                var type = Type.GetType(typeName);
-                if (type == null) { throw new Exception("Cannot resolve type for [" + typeName + "]"); }
-
-                var component = (IComponent)Activator.CreateInstance(type);
-                var componentProperties = JSON.Parse(ComponentEditorState[i]);
-                component.DeserializeComponent(componentProperties);
-                componentsToRegister[i] = component;
+                component.Convert(entity);
             }
-            entity.AddComponents(componentsToRegister);
-        }
-        
-        public IEntityCollection GetCollection()
-        {
-            return EntityDatabase.GetCollection(CollectionId);
         }
     }
 }

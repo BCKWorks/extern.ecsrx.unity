@@ -30,7 +30,9 @@ namespace EcsRx.UnityEditor.Editor.EditorInputs
                 new ReactiveColorEditorInput(),
                 new ReactiveBoundsEditorInput(),
                 new ReactiveRectEditorInput(),
-                new GameObjectEditorInput()
+                new GameObjectEditorInput(),
+                new TransformEditorInput(),
+                new ViewEntityEditorInput()
             });
         }
 

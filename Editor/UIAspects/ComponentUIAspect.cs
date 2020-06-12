@@ -1,5 +1,8 @@
 ﻿using System;
 using EcsRx.Components;
+using EcsRx.Entities;
+using EcsRx.Extensions;
+using EcsRx.Plugins.Views.Components;
 using EcsRx.UnityEditor.Editor.EditorInputs;
 using EcsRx.UnityEditor.Editor.Helpers;
 using EcsRx.UnityEditor.Extensions;
@@ -50,26 +53,25 @@ namespace EcsRx.UnityEditor.Editor.UIAspects
             foreach (var property in componentProperties)
             {
                 EditorGUILayout.BeginHorizontal();
-                var propertyType = property.PropertyType;
+
                 var propertyValue = property.GetValue(component, null);
+                var propertyType = propertyValue.GetType();
 
                 var handler = DefaultEditorInputRegistry.GetHandlerFor(propertyType);
                 if (handler == null)
                 {
-                    Debug.LogWarning("This type is not supported: " + propertyType.Name + " - In component: " + component.GetType().Name);
+                    // no verbose
+                    // Debug.LogWarning("This type is not supported: " + propertyType.Name + " - In component: " + component.GetType().Name);
                     EditorGUILayout.EndHorizontal();
                     continue;
                 }
 
                 var updatedValue = handler.CreateUI(property.Name, propertyValue);
-
-                if (updatedValue != null)
+                if (propertyType != typeof(Entity) && updatedValue != null)
                 { property.SetValue(component, updatedValue, null); }
 
                 EditorGUILayout.EndHorizontal();
             }
         } 
-         
-
     }
 }
