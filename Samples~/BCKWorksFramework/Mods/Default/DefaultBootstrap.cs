@@ -9,8 +9,10 @@ using UniRx;
 using UnityEngine;
 using System;
 using BCKWorks.Engine.Events;
+using Mods.Default.Installer;
+using BCKWorks.Installer;
 
-namespace BCKWorks.Mods.Default
+namespace Mods.Default
 {
     public class DefaultBootstrap : EcsRxApplicationBehaviour
     {
@@ -31,17 +33,17 @@ namespace BCKWorks.Mods.Default
             RegisterPlugin(new SceneStatePlugin());
         }
 
-        IDisposable fireDisposable;
-
         protected override void ApplicationStarted()
         {
-            fireDisposable = Observable.EveryUpdate().Subscribe(x =>
+            var settings = Container.Resolve<DefaultInstaller.Settings>();
+            var bckworksSettings = Container.Resolve<BCKWorksInstaller.Settings>();
+            Debug.Log($"settings.Name is {settings.Name} in {bckworksSettings.Name}");
+
+            Observable.Interval(TimeSpan.FromSeconds(1))
+                .First()
+                .Subscribe(x =>
             {
-                if (Input.GetKeyDown(KeyCode.Space))
-                {
-                    EventSystem.Publish(new LoadingPreparingEvent() { ChangeToSceneName = "" });
-                    fireDisposable.Dispose();
-                }
+                EventSystem.Publish(new LoadingPreparingEvent() { ChangeToSceneName = "" });
             });
         }
 
