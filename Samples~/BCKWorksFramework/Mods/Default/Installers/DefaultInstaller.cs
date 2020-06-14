@@ -4,7 +4,7 @@ using Zenject;
 
 namespace Mods.Default.Installer
 {
-    [CreateAssetMenu(fileName = "DefaultSettings", menuName = "Mods/Default/Settings")]
+    [CreateAssetMenu(fileName = "DefaultSettings", menuName = "BCKWorks/Mods/Default/Settings")]
     public class DefaultInstaller : ScriptableObjectInstaller<DefaultInstaller>
     {
 #pragma warning disable 0649
