@@ -1,4 +1,5 @@
-﻿using System;
+﻿#if UNITY_EDITOR
+using System;
 using EcsRx.Components;
 using EcsRx.Entities;
 using EcsRx.Extensions;
@@ -75,3 +76,4 @@ namespace EcsRx.UnityEditor.Editor.UIAspects
         } 
     }
 }
+#endif

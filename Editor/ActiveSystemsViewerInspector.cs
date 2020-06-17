@@ -1,4 +1,5 @@
-﻿using EcsRx.Entities;
+﻿#if UNITY_EDITOR
+using EcsRx.Entities;
 using EcsRx.Extensions;
 using EcsRx.Plugins.Views.Components;
 using EcsRx.Systems;
@@ -263,3 +264,4 @@ namespace EcsRx.UnityEditor.Editor
         }
     }
 }
+#endif

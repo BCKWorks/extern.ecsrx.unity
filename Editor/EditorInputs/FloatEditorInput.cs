@@ -1,3 +1,4 @@
+#if UNITY_EDITOR
 using UnityEditor;
 
 namespace EcsRx.UnityEditor.Editor.EditorInputs
@@ -8,3 +9,4 @@ namespace EcsRx.UnityEditor.Editor.EditorInputs
         { return EditorGUILayout.FloatField(label, value); }
     }
 }
+#endif

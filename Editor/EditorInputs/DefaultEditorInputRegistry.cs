@@ -1,3 +1,4 @@
+#if UNITY_EDITOR
 using System;
 using System.Collections.Generic;
 
@@ -40,3 +41,4 @@ namespace EcsRx.UnityEditor.Editor.EditorInputs
         { return _editorInputRegistry.GetHandlerFor(type); }
     }
 }
+#endif

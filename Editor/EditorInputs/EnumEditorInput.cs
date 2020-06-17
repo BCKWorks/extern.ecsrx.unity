@@ -1,3 +1,4 @@
+#if UNITY_EDITOR
 using System;
 using UnityEditor;
 
@@ -14,3 +15,4 @@ namespace EcsRx.UnityEditor.Editor.EditorInputs
         { return EditorGUILayout.EnumPopup(label, value); }
     }
 }
+#endif

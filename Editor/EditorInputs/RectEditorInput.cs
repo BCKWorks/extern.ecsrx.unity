@@ -1,3 +1,4 @@
+#if UNITY_EDITOR
 using UnityEditor;
 using UnityEngine;
 
@@ -9,3 +10,4 @@ namespace EcsRx.UnityEditor.Editor.EditorInputs
         { return EditorGUILayout.RectField(label, value); }
     }
 }
+#endif
