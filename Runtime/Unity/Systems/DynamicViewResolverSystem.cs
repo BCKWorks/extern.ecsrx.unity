@@ -30,6 +30,7 @@ namespace EcsRx.Unity.Systems
         }
 
         public abstract GameObject CreateView(IEntity entity);
+        protected virtual void OnViewCreated(IEntity entity, GameObject view) { }
         public abstract void DestroyView(IEntity entity, GameObject view);
         
         public void Setup(IEntity entity)
@@ -39,6 +40,8 @@ namespace EcsRx.Unity.Systems
             
             var viewGameObject = CreateView(entity);
             viewComponent.View = viewGameObject;
+
+            OnViewCreated(entity, viewComponent.View as GameObject);
             
             var entityBinding = viewGameObject.GetComponent<EntityView>();
             if (entityBinding == null)
