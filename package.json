@@ -11,9 +11,9 @@
   },
   "samples": [
     {
-      "displayName": "Examples",
-      "description": "EcsRx Unity Examples",
-      "path": "Samples~/Examples"
+      "displayName": "BCKWorksFramework",
+      "description": "BCKWorks Framework",
+      "path": "Samples~/BCKWorksFramework"
     }
   ]
 }

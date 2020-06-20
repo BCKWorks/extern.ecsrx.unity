@@ -1,4 +1,5 @@
-﻿using System;
+﻿#if UNITY_EDITOR
+using System;
 using UnityEditor;
 using UnityEditor.SceneManagement;
 using UnityEngine;
@@ -92,3 +93,4 @@ namespace EcsRx.UnityEditor.Editor.Extensions
         }
     }
 }
+#endif

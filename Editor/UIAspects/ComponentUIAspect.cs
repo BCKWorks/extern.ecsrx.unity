@@ -1,5 +1,7 @@
-﻿using System;
+﻿#if UNITY_EDITOR
+using System;
 using EcsRx.Components;
+using EcsRx.Entities;
 using EcsRx.UnityEditor.Editor.EditorInputs;
 using EcsRx.UnityEditor.Editor.Helpers;
 using EcsRx.UnityEditor.Extensions;
@@ -42,7 +44,7 @@ namespace EcsRx.UnityEditor.Editor.UIAspects
             var type = AttemptGetType(componentTypeName);
             return (T)Activator.CreateInstance(type);
         }
-        
+
         public static void ShowComponentProperties<T>(T component)
             where T : IComponent
         {
@@ -50,26 +52,33 @@ namespace EcsRx.UnityEditor.Editor.UIAspects
             foreach (var property in componentProperties)
             {
                 EditorGUILayout.BeginHorizontal();
-                var propertyType = property.PropertyType;
+
                 var propertyValue = property.GetValue(component, null);
+                if (propertyValue == null)
+                {
+                    EditorGUILayout.LabelField(property.Name, property.PropertyType.ToString() + " (null)");
+                    EditorGUILayout.EndHorizontal();
+                    continue;
+                }
+                var propertyType = propertyValue.GetType();
 
                 var handler = DefaultEditorInputRegistry.GetHandlerFor(propertyType);
                 if (handler == null)
                 {
-                    Debug.LogWarning("This type is not supported: " + propertyType.Name + " - In component: " + component.GetType().Name);
+                    // no verbose
+                    // Debug.LogWarning("This type is not supported: " + propertyType.Name + " - In component: " + component.GetType().Name);
+                    EditorGUILayout.LabelField(property.Name, property.PropertyType.ToString());
                     EditorGUILayout.EndHorizontal();
                     continue;
                 }
 
                 var updatedValue = handler.CreateUI(property.Name, propertyValue);
-
-                if (updatedValue != null)
+                if (propertyType != typeof(Entity) && updatedValue != null)
                 { property.SetValue(component, updatedValue, null); }
 
                 EditorGUILayout.EndHorizontal();
             }
-        } 
-         
-
+        }
     }
 }
+#endif

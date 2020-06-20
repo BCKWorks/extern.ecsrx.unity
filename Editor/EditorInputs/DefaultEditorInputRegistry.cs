@@ -1,3 +1,4 @@
+#if UNITY_EDITOR
 using System;
 using System.Collections.Generic;
 
@@ -11,6 +12,7 @@ namespace EcsRx.UnityEditor.Editor.EditorInputs
         {
             _editorInputRegistry = new EditorInputRegistry(new List<IEditorInput>
             {
+                new LayerMaskEditorInput(),
                 new IntEditorInput(),
                 new FloatEditorInput(),
                 new StringEditorInput(),
@@ -30,7 +32,9 @@ namespace EcsRx.UnityEditor.Editor.EditorInputs
                 new ReactiveColorEditorInput(),
                 new ReactiveBoundsEditorInput(),
                 new ReactiveRectEditorInput(),
-                new GameObjectEditorInput()
+                new GameObjectEditorInput(),
+                new TransformEditorInput(),
+                new ViewEntityEditorInput()
             });
         }
 
@@ -38,3 +42,4 @@ namespace EcsRx.UnityEditor.Editor.EditorInputs
         { return _editorInputRegistry.GetHandlerFor(type); }
     }
 }
+#endif

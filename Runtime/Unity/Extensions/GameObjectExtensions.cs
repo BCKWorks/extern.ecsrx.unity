@@ -1,11 +1,11 @@
 ﻿using System;
-using EcsRx.Collections;
 using EcsRx.Collections.Entity;
 using EcsRx.Entities;
 using EcsRx.Extensions;
 using EcsRx.Unity.MonoBehaviours;
 using EcsRx.Plugins.Views.Components;
 using UnityEngine;
+using EcsRx.Components;
 
 namespace EcsRx.Unity.Extensions
 {
@@ -25,6 +25,15 @@ namespace EcsRx.Unity.Extensions
             
             var viewComponent = entity.GetComponent<ViewComponent>();
             viewComponent.View = gameObject;
+        }
+
+        public static void ConvertEntity(this GameObject gameObject, IEntity entity, IComponent component = null)
+        {
+            var monoComponents = gameObject.GetComponents<IConvertToEntity>();
+            foreach (var monoComponent in monoComponents)
+            {
+                monoComponent.Convert(entity, component);
+            }
         }
     }
 }

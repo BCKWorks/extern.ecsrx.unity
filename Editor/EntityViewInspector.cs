@@ -1,4 +1,5 @@
-﻿using System;
+﻿#if UNITY_EDITOR
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using EcsRx.Components;
@@ -8,6 +9,7 @@ using EcsRx.UnityEditor.Editor.Extensions;
 using EcsRx.UnityEditor.Editor.UIAspects;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 namespace EcsRx.UnityEditor.Editor
 {
@@ -16,7 +18,9 @@ namespace EcsRx.UnityEditor.Editor
     {
         private EntityView _entityView;
 
-        public bool showComponents;
+        public bool showComponents = true;
+
+        private Type[] componentTypes;
 
         private readonly IEnumerable<Type> allComponentTypes = AppDomain.CurrentDomain.GetAssemblies()
                                 .SelectMany(s => s.GetTypes())
@@ -69,21 +73,21 @@ namespace EcsRx.UnityEditor.Editor
                         var typeName = componentType.Name;
                         var typeNamespace = componentType.Namespace;
 
-                        this.WithVerticalLayout(() =>
-                        {
+                        //this.WithVerticalLayout(() =>
+                        //{
                             this.WithHorizontalLayout(() =>
                             {
-                                if (this.WithIconButton("-"))
-                                {
-                                    componentsToRemove.Add(currentIndex);
-                                }
+                                //if (this.WithIconButton("-"))
+                                //{
+                                //    componentsToRemove.Add(currentIndex);
+                                //}
 
                                 this.WithLabel(typeName);
                             });
 
                             EditorGUILayout.LabelField(typeNamespace);
                             EditorGUILayout.Space();
-                        });
+                        //});
                         
                         var component = currentComponents[currentIndex];
                         ComponentUIAspect.ShowComponentProperties(component);
@@ -104,54 +108,44 @@ namespace EcsRx.UnityEditor.Editor
                 componentArray[i] = component.GetType();
             }
             _entityView.Entity.RemoveComponents(componentArray);
+
+            refreshComponentTypes();
         }
 
-        public static Type GetTypeWithAssembly(string typeName)
+        void refreshComponentTypes()
         {
-            var type = Type.GetType(typeName);
-            if (type != null) return type;
-            foreach (var a in AppDomain.CurrentDomain.GetAssemblies())
-            {
-                type = a.GetType(typeName);
-                if (type != null)
-                    return type;
-            }
-            return null;
-        }
+            if (_entityView.Entity == null)
+                return;
 
-        private void ComponentSelectionSection()
-        {
-            this.UseVerticalBoxLayout(() =>
-            {
-                var availableTypes = allComponentTypes
-                    .Where(x => !_entityView.Entity.Components.Select(y => y.GetType()).Contains(x))
-                    .ToArray();
-
-                var types = availableTypes.Select(x => string.Format("{0} [{1}]", x.Name, x.Namespace)).ToArray();
-                var index = -1;
-                index = EditorGUILayout.Popup("Add Component", index, types);
-                if (index >= 0)
-                {
-                    var component = (IComponent)Activator.CreateInstance(availableTypes[index]);
-                    _entityView.Entity.AddComponents(component);
-                }
-            });
+            componentTypes = allComponentTypes
+                .Where(x => !_entityView.Entity.Components.Select(y => y.GetType()).Contains(x))
+                .ToArray();
         }
 
         public override void OnInspectorGUI()
         {
-            _entityView = (EntityView)target;
-
             if (_entityView.Entity == null)
             {
                 EditorGUILayout.LabelField("No Entity Assigned");
                 return;
             }
 
+            if (componentTypes == null)
+                return;
+
             PoolSection();
             EditorGUILayout.Space();
-            ComponentSelectionSection();
             ComponentListings();
+        }
+
+        public override VisualElement CreateInspectorGUI()
+        {
+            _entityView = (EntityView)target;
+
+            refreshComponentTypes();
+
+            return base.CreateInspectorGUI();
         }
     }
 }
+#endif

@@ -27,10 +27,21 @@ namespace EcsRx.Zenject
     [DefaultExecutionOrder(-20000)]
     public abstract class EcsRxApplicationBehaviour : UnityEcsRxApplicationBehaviour
     {
+        private static EcsRxApplicationBehaviour instance;
+        public static EcsRxApplicationBehaviour Instance
+        {
+            get
+            {
+                return instance;
+            }
+        }
+
         private SceneContext _sceneContext;
         
         private void Awake()
         {
+            instance = this;
+
             var sceneContexts = FindObjectsOfType<SceneContext>();
             _sceneContext = sceneContexts.FirstOrDefault();
             
