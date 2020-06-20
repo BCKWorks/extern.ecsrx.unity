@@ -1,6 +1,6 @@
 {
   "name": "com.bckworks.ecsrx.unity",
-  "version": "2.1.1",
+  "version": "2.1.2",
   "displayName": "BCKWorks EcsRx Unity",
   "description": "A simple framework for unity using the ECS paradigm but with unirx for fully reactive systems.",
   "unity": "2019.3",
