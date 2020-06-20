@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Editor/EditorInputs/LayerMaskEditorInput.cs.meta
+guid: 1d0cdb07a4d7810469944affc43cb915
+=======
 guid: 24fabe9f756f5924ea2350c24f9c48eb
+>>>>>>> a4b5f752f0085a60dfd6ca0ef368e041c224e41b:Editor/EditorInputs/TransformEditorInput.cs.meta
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2

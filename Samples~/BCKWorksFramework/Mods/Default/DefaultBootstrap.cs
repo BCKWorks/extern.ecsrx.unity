@@ -9,8 +9,15 @@ using UniRx;
 using UnityEngine;
 using System;
 using BCKWorks.Engine.Events;
+<<<<<<< HEAD
 
 namespace BCKWorks.Mods.Default
+=======
+using Mods.Default.Installer;
+using BCKWorks.Installer;
+
+namespace Mods.Default
+>>>>>>> a4b5f752f0085a60dfd6ca0ef368e041c224e41b
 {
     public class DefaultBootstrap : EcsRxApplicationBehaviour
     {
@@ -31,6 +38,7 @@ namespace BCKWorks.Mods.Default
             RegisterPlugin(new SceneStatePlugin());
         }
 
+<<<<<<< HEAD
         IDisposable fireDisposable;
 
         protected override void ApplicationStarted()
@@ -42,6 +50,19 @@ namespace BCKWorks.Mods.Default
                     EventSystem.Publish(new LoadingPreparingEvent() { ChangeToSceneName = "" });
                     fireDisposable.Dispose();
                 }
+=======
+        protected override void ApplicationStarted()
+        {
+            var settings = Container.Resolve<DefaultInstaller.Settings>();
+            var bckworksSettings = Container.Resolve<BCKWorksInstaller.Settings>();
+            Debug.Log($"settings.Name is {settings.Name} in {bckworksSettings.Name}");
+
+            Observable.Interval(TimeSpan.FromSeconds(1))
+                .First()
+                .Subscribe(x =>
+            {
+                EventSystem.Publish(new LoadingPreparingEvent() { ChangeToSceneName = "" });
+>>>>>>> a4b5f752f0085a60dfd6ca0ef368e041c224e41b
             });
         }
 

@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 8005ecd511189d24c8a1a01e661048b2, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -37,8 +37,13 @@ RenderSettings:
   m_ReflectionBounces: 1
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
+<<<<<<< HEAD:Samples~/BCKWorksFramework/Scenes/Default.unity
   m_Sun: {fileID: 0}
   m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+=======
+  m_Sun: {fileID: 1174727560}
+  m_IndirectSpecularColor: {r: 0.28462127, g: 0.37120965, b: 0.49880528, a: 1}
+>>>>>>> a4b5f752f0085a60dfd6ca0ef368e041c224e41b:Samples~/BCKWorksFramework/Mods/Default/Scenes/Default.unity
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -97,8 +102,14 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
+<<<<<<< HEAD:Samples~/BCKWorksFramework/Scenes/Default.unity
   m_LightingDataAsset: {fileID: 0}
   m_UseShadowmask: 1
+=======
+  m_LightingDataAsset: {fileID: 112000000, guid: f287f517715864317895b95596dddaf5,
+    type: 2}
+  m_UseShadowmask: 0
+>>>>>>> a4b5f752f0085a60dfd6ca0ef368e041c224e41b:Samples~/BCKWorksFramework/Mods/Default/Scenes/Default.unity
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -202,7 +213,11 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
+<<<<<<< HEAD:Samples~/BCKWorksFramework/Scenes/Default.unity
   m_RootOrder: 2
+=======
+  m_RootOrder: 1
+>>>>>>> a4b5f752f0085a60dfd6ca0ef368e041c224e41b:Samples~/BCKWorksFramework/Mods/Default/Scenes/Default.unity
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &794143967
 GameObject:
@@ -214,6 +229,10 @@ GameObject:
   m_Component:
   - component: {fileID: 794143969}
   - component: {fileID: 794143968}
+<<<<<<< HEAD:Samples~/BCKWorksFramework/Scenes/Default.unity
+=======
+  - component: {fileID: 794143970}
+>>>>>>> a4b5f752f0085a60dfd6ca0ef368e041c224e41b:Samples~/BCKWorksFramework/Mods/Default/Scenes/Default.unity
   m_Layer: 0
   m_Name: SceneContext
   m_TagString: Untagged
@@ -233,7 +252,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89715ad69b973a14899afa2c6730b30b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD:Samples~/BCKWorksFramework/Scenes/Default.unity
   _scriptableObjectInstallers: []
+=======
+  _scriptableObjectInstallers:
+  - {fileID: 11400000, guid: 59c74e3b7d41c4007a5a525fc66b2dfd, type: 2}
+>>>>>>> a4b5f752f0085a60dfd6ca0ef368e041c224e41b:Samples~/BCKWorksFramework/Mods/Default/Scenes/Default.unity
   _monoInstallers: []
   _installerPrefabs: []
   _autoRun: 1
@@ -266,7 +290,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< HEAD:Samples~/BCKWorksFramework/Scenes/Default.unity
 --- !u!1 &936620564
+=======
+--- !u!114 &794143970
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 794143967}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6b6b202bd2644fe8a2cd92f19051ca2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &1174727559
+>>>>>>> a4b5f752f0085a60dfd6ca0ef368e041c224e41b:Samples~/BCKWorksFramework/Mods/Default/Scenes/Default.unity
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -274,8 +314,13 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
+<<<<<<< HEAD:Samples~/BCKWorksFramework/Scenes/Default.unity
   - component: {fileID: 936620566}
   - component: {fileID: 936620565}
+=======
+  - component: {fileID: 1174727561}
+  - component: {fileID: 1174727560}
+>>>>>>> a4b5f752f0085a60dfd6ca0ef368e041c224e41b:Samples~/BCKWorksFramework/Mods/Default/Scenes/Default.unity
   m_Layer: 0
   m_Name: Bootstrap
   m_TagString: Untagged
@@ -283,6 +328,7 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+<<<<<<< HEAD:Samples~/BCKWorksFramework/Scenes/Default.unity
 --- !u!114 &936620565
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -327,12 +373,19 @@ GameObject:
   m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!108 &1807580756
+=======
+--- !u!108 &1174727560
+>>>>>>> a4b5f752f0085a60dfd6ca0ef368e041c224e41b:Samples~/BCKWorksFramework/Mods/Default/Scenes/Default.unity
 Light:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD:Samples~/BCKWorksFramework/Scenes/Default.unity
   m_GameObject: {fileID: 1807580755}
+=======
+  m_GameObject: {fileID: 1174727559}
+>>>>>>> a4b5f752f0085a60dfd6ca0ef368e041c224e41b:Samples~/BCKWorksFramework/Mods/Default/Scenes/Default.unity
   m_Enabled: 1
   serializedVersion: 10
   m_Type: 1
@@ -348,9 +401,9 @@ Light:
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
-    m_Bias: 0.05
-    m_NormalBias: 0.4
-    m_NearPlane: 0.2
+    m_Bias: 0.02
+    m_NormalBias: 0.1
+    m_NearPlane: 0.1
     m_CullingMatrixOverride:
       e00: 1
       e01: 0
@@ -387,12 +440,17 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+<<<<<<< HEAD:Samples~/BCKWorksFramework/Scenes/Default.unity
 --- !u!4 &1807580757
+=======
+--- !u!4 &1174727561
+>>>>>>> a4b5f752f0085a60dfd6ca0ef368e041c224e41b:Samples~/BCKWorksFramework/Mods/Default/Scenes/Default.unity
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD:Samples~/BCKWorksFramework/Scenes/Default.unity
   m_GameObject: {fileID: 1807580755}
   m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
   m_LocalPosition: {x: 0, y: 3, z: 0}
@@ -400,4 +458,13 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
+=======
+  m_GameObject: {fileID: 1174727559}
+  m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
+  m_LocalPosition: {x: -5.237982, y: -4.0266724, z: -0.9363842}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 2
+>>>>>>> a4b5f752f0085a60dfd6ca0ef368e041c224e41b:Samples~/BCKWorksFramework/Mods/Default/Scenes/Default.unity
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
