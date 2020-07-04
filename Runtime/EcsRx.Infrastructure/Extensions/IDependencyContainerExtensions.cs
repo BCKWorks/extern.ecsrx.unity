@@ -5,6 +5,7 @@ using EcsRx.Collections;
 using EcsRx.Groups;
 using EcsRx.Groups.Observable;
 using EcsRx.Infrastructure.Dependencies;
+using EcsRx.Systems;
 
 namespace EcsRx.Infrastructure.Extensions
 {
@@ -126,6 +127,39 @@ namespace EcsRx.Infrastructure.Extensions
             var collectionManager = container.Resolve<IObservableGroupManager>();
             var group = new Group(componentTypes);
             return collectionManager.GetObservableGroup(group);
+        }
+
+        public static void BindApplicableSystems(this IDependencyContainer container, params string[] namespaces)
+        {
+            var applicationAssemblies = AppDomain.CurrentDomain.GetAssemblies();
+            var systemType = typeof(ISystem);
+
+            var applicableSystems = applicationAssemblies.SelectMany(x => x.GetTypes())
+                .Where(x =>
+                {
+                    if (x.IsInterface || x.IsAbstract)
+                    { return false; }
+
+                    if (string.IsNullOrEmpty(x.Namespace))
+                    { return false; }
+
+                    if (!systemType.IsAssignableFrom(x))
+                    { return false; }
+
+                    return namespaces.Any(namespaceToVerify => x.Namespace.Contains(namespaceToVerify));
+                })
+                .ToList();
+
+            foreach (var applicableSystemType in applicableSystems)
+            {
+                var bindingConfiguration = new BindingConfiguration
+                {
+                    AsSingleton = true,
+                    WithName = applicableSystemType.Name
+                };
+
+                container.Bind(typeof(ISystem), applicableSystemType, bindingConfiguration);
+            }
         }
     }
 }
