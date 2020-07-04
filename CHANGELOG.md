@@ -1,6 +1,11 @@
 # Changelog
 All notable changes to this package will be documented in this file.
 
+## [2.1.4] - 2020-07-04
+### Added 
+- Unity version update 2019.4.x LTS
+
+
 ## [2.1.3] - 2020-06-20
 ### Added 
 - OnViewCreated in DynamicViewResolverSystem
