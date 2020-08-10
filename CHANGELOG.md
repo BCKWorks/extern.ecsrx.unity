@@ -1,26 +1,6 @@
 # Changelog
 All notable changes to this package will be documented in this file.
 
-## [2.1.5] - 2020-07-12
+## [1.0.0] - 2020-08-10
 ### Added 
-- EditorGUICallbacks.cs to support OnDrawGUI, OnDrawGUISelected and OnGUI callback with MonoBehaviour
-
-
-## [2.1.4] - 2020-07-04
-### Added 
-- Unity version update 2019.4.x LTS
-
-
-## [2.1.3] - 2020-06-20
-### Added 
-- OnViewCreated in DynamicViewResolverSystem
-
-## [2.1.2] - 2020-06-20
-### Added 
-- ConvertEntity in GameObjectExtensions.cs
-- ComponentUIAspect added default string label when not defined properties up
-- ComponentUIAspect added LayerMaskEditorInput
-
-## [2.1.1] - 2020-06-08
-### Added 
-- Initial release
+- New start at BCKWorks

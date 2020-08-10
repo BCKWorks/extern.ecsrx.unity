@@ -1,19 +1,44 @@
 {
-  "name": "com.bckworks.ecsrx.unity",
-  "version": "2.1.5",
-  "displayName": "BCKWorks EcsRx Unity",
+  "name": "com.bckworks.extern.ecsrx.unity",
+  "displayName": "BCKWorks External EcsRx Unity",
   "description": "A simple framework for unity using the ECS paradigm but with unirx for fully reactive systems.",
+  "version": "1.0.0",
   "unity": "2019.4",
-  "dependencies": {
-    "com.bckworks.ecsrx": "https://github.com/BCKWorks/ecsrx.git#upm",
-    "com.bckworks.neuecc.unirx": "https://github.com/BCKWorks/UniRx.git#upm",
-    "com.bckworks.modesttree.zenject": "https://github.com/BCKWorks/Zenject.git#upm"
+  "keywords": [
+  ],
+  "homepage": "https://github.com/BCKWorks/extern.ecsrx.unity#readme",
+  "bugs": {
+    "url": "https://github.com/BCKWorks/extern.ecsrx.unity/issues"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BCKWorks/extern.ecsrx.unity.git#upm"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "BCKWorks External",
+    "email": "ck@bckworks.com",
+    "url": "https://github.com/BCKWorks"
+  },
+  "dependencies": {
+    "com.bckworks.extern.ecsrx": "1.1.1",
+    "com.bckworks.extern.unirx": "1.1.1",
+    "com.bckworks.extern.zenject": "1.2.0"
+  },
+  "files": [
+    "*.md",
+    "*.meta",
+    "*.asmdef",
+    "*.xml",
+    "Editor",
+    "Runtime",
+    "Samples~"
+  ],
   "samples": [
     {
-      "displayName": "BCKWorksFramework",
-      "description": "BCKWorks Framework",
-      "path": "Samples~/BCKWorksFramework"
+      "displayName": "Examples",
+      "description": "Examples",
+      "path": "Samples~/Examples"
     }
   ]
 }
