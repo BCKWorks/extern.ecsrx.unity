@@ -1,10 +1,34 @@
 {
   "name": "com.bckworks.ecsrx",
-  "version": "3.11.1",
-  "displayName": "BCKWorks EcsRx",
+  "displayName": "EcsRx",
   "description": "A reactive take on the ECS pattern for .net game developers",
+  "version": "1.0.0",
   "unity": "2019.4",
+  "keywords": [
+    "xr",
+    "vr",
+    "ar",
+    "mr"
+  ],
+  "homepage": "https://github.com/BCKWorks/ecsrx#readme",
+  "bugs": {
+    "url": "https://github.com/BCKWorks/ecsrx/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BCKWorks/ecsrx.git#upm"
+  },
   "license": "MIT",
-  "dependencies": {
-  }
+  "author": {
+    "name": "BCKWorks",
+    "email": "ck@bckworks.com",
+    "url": "https://github.com/BCKWorks"
+  },
+  "files": [
+    "*.md",
+    "*.meta",
+    "*.asmdef",
+    "*.xml",
+    "Runtime"
+  ]
 }
