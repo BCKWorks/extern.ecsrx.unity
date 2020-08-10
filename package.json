@@ -1,5 +1,5 @@
 {
-  "name": "com.bckworks.ext.ecsrx",
+  "name": "com.bckworks.extern.ecsrx",
   "displayName": "BCKWorks External EcsRx",
   "description": "A reactive take on the ECS pattern for .net game developers",
   "version": "1.0.0",
