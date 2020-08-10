@@ -1,5 +1,5 @@
 {
-  "name": "com.bckworks.ecsrx",
+  "name": "com.bckworks.ext.ecsrx",
   "displayName": "EcsRx",
   "description": "A reactive take on the ECS pattern for .net game developers",
   "version": "1.0.0",
@@ -20,7 +20,7 @@
   },
   "license": "MIT",
   "author": {
-    "name": "BCKWorks",
+    "name": "BCKWorks External",
     "email": "ck@bckworks.com",
     "url": "https://github.com/BCKWorks"
   },
