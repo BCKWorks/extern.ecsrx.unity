@@ -2,9 +2,11 @@
 
 EcsRx is a reactive take on the common ECS pattern with a well separated design using rx and adhering to IoC and other sensible design patterns.
 
+[![Release][Version-Release]][Releases]
+[![License][License-Badge]][License]
+
 [![Build Status][build-status-image]][build-status-url]
 [![Code Quality Status][codacy-image]][codacy-url]
-[![License][license-image]][license-url]
 [![Nuget Version][nuget-image]][nuget-url]
 [![Join Discord Chat][discord-image]][discord-url]
 [![Documentation][gitbook-image]][gitbook-url]
