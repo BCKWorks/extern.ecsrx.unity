@@ -2,7 +2,7 @@
   "name": "com.bckworks.extern.ecsrx",
   "displayName": "BCKWorks External EcsRx",
   "description": "A reactive take on the ECS pattern for .net game developers",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "unity": "2019.4",
   "keywords": [
     "xr",
@@ -10,13 +10,13 @@
     "ar",
     "mr"
   ],
-  "homepage": "https://github.com/BCKWorks/ecsrx#readme",
+  "homepage": "https://github.com/BCKWorks/extern.ecsrx#readme",
   "bugs": {
-    "url": "https://github.com/BCKWorks/ecsrx/issues"
+    "url": "https://github.com/BCKWorks/extern.ecsrx/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/BCKWorks/ecsrx.git#upm"
+    "url": "git+https://github.com/BCKWorks/extern.ecsrx.git#upm"
   },
   "license": "MIT",
   "author": {
