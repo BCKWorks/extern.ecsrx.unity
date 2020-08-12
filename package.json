@@ -2,7 +2,7 @@
   "name": "com.bckworks.extern.ecsrx",
   "displayName": "BCKWorks External EcsRx",
   "description": "A reactive take on the ECS pattern for .net game developers",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "unity": "2019.4",
   "keywords": [
   ],
@@ -16,7 +16,7 @@
   },
   "license": "MIT",
   "author": {
-    "name": "BCKWorks External",
+    "name": "BCKWorks",
     "email": "ck@bckworks.com",
     "url": "https://github.com/BCKWorks"
   },
@@ -25,6 +25,8 @@
     "*.meta",
     "*.asmdef",
     "*.xml",
-    "Runtime"
+    "Editor",
+    "Runtime",
+    "Samples~"
   ]
 }
