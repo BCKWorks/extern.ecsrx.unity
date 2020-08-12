@@ -1,72 +1,61 @@
-# EcsRx.Unity
+![IMG](https://img.shields.io/badge/pkg%20name-com.bckworks.extern.unity.ecsrx-yellowgreen?style=for-the-badge&logo=appveyor)
 
-[EcsRx](https://github.com/EcsRx/ecsrx) is a reactive take on the common ECS pattern with a well separated design, this library builds off that basis and adds unity specific helpers and functionality.
+![NPM](https://img.shields.io/npm/v/com.bckworks.extern.unity.ecsrx)
+![NPM](https://img.shields.io/npm/l/com.bckworks.extern.unity.ecsrx)
 
-[![Discord](https://img.shields.io/discord/488609938399297536.svg)](https://discord.gg/bS2rnGz)
+# 소개
 
-If you do not need support for Unity and just want to use [EcsRx](https://github.com/EcsRx/ecsrx) in .net projects then head on over to the [EcsRx](https://github.com/EcsRx/ecsrx) repo [https://github.com/EcsRx/ecsrx](https://github.com/EcsRx/ecsrx).
+BCKWorks External Unity3D EcsRx는 [유니티] 기반 소프트웨어 개발 도구(SDK)입니다.
 
-## Features
+[EcsRx/ecsrx.unity]로부터 퍼왔습니다.
 
-### Architecture
-- Simple ECS interfaces to follow
-- Fully reactive architecture
-- Favours composition over inheritance
-- Adheres to inversion of control
-- Lightweight codebase 
-- Built in support for events (raise your own and react to them)
-- Built in support for pooling (easy to add your own implementation or wrap 3rd party pooling tools)
-- Built in support for plugins (wrap up your own components and systems and share them with others)
-- Fully testable and easy to mock
+> `2019.4.x LTS` 버전에 맞춰서 제작되었습니다.
 
-### Unity specific
-- Simple unity conventions to follow (if you dont like it, easy enough to roll your own)
-- Built in support for editor viewing and editing of components
-- Built in support for dependency injection via Zenject (or other DI frameworks)
-- Lots of extension and architectural helpers to help MonoBehaviours interact with the core framework
-- Plays nicely with scene first style setups
+# 시작하기
 
-## Examples
+## 프로젝트 설정하기
 
-There are a lot of example projects within the repository which you can clone and look at if you wish, or if you want more complex examples look at:
+* [유니티] 버전 `2019.4.x LTS`을 사용하여 비어있는 3D 템플릿으로 새로운 프로젝트를 생성하거나 기존 프로젝트를 불러옵니다.
+* 프로젝트의 `Scripting Runtime Version`이 `NET 4.x`으로 설정되어 있는지 확인합니다.
+  * 유니티 편집기 상에서 `Edit -> Project Settings`를 통해서 `Project Settings`창을 오픈합니다.
+  * `Project Settings`창에서 왼쪽 메뉴를 통해 'Player'를 선택합니다.
+  * `Player`설정 패널에서 `Other Settings`를 펼칩니다.
+  * `Scripting Runtime Version`이 `.NET 4.x`로 설정되었는지 확인합니다.
 
-- [ecsrx/ecsrx.roguelike2d](https://github.com/ecsrx/ecsrx.roguelike2d) (Unity Rogluelike 2d using EcsRx)
+## 유니티 프로젝트 매니페스트에 패키지 추가하기
 
-- [ecsrx/ecsrx.buffs](https://github.com/ecsrx/ecsrx.buffs) (Example EcsRx plugin)
+* 프로젝트의 `Packages`디렉토리를 탐색합니다.
+* [프로젝트-메니패스트]인 `manifest.json`을 수정하기 위해 텍스트 편집기에서 오픈합니다.
+  * `https://registry.npmnjs.org/`가 `scopedRegistries`에 포함되었는지 확인합니다.
+    * `com.bckworks`가 `scopes`에 포함되었는지 확인합니다.
+  * `dependencies`에 `com.bckworks.extern.unity.ecsrx`의 최신버전을 추가합니다.
 
-There is also a supplementary data-binding framework [grofit/bindingsrx](https://github.com/grofit/bindingsrx) which can speed up development of UI related interactions by adding one/two way data binding on UI and other unity objects.
+ 간략한 예제는 다음과 같습니다. 여기에 표기된 `"X.Y.Z"` 버전은 [최신-릴리즈]인 ![NPM](https://img.shields.io/npm/v/com.bckworks.extern.unity.ecsrx)로 대체 되어야 합니다.
+```json
+{
+  "scopedRegistries": [
+    {
+      "name": "BCKWorks",
+      "url": "https://registry.npmjs.org/",
+      "scopes": [
+        "com.bckworks"
+      ]
+    }
+  ],
+  "dependencies": {
+    "com.bckworks.extern.unity.ecsrx":  "X.Y.Z",
+    ...
+  }
+}
+```
+* 메니페스트 편집을 마치고 저장한 후 유니티로 다시 돌아가면 패키지가 자동으로 추가됩니다.
 
-## Requirements
+## 최신 버전으로 업데이트하기
 
-- Unity 2018 (.net 4.5)
-- [UniRx 6+](https://github.com/neuecc/UniRx)
-- [Zenject 6+](https://github.com/modesttree/Zenject)
+위의 과정을 통해 얻은 패키지는 유니티 패키지 매니저 UI에 나타날 것입니다. 이후로 유니티 패키지 매니저 UI 상에서 업데이트가 가능할 경우 `Update` 버튼이 활성화 되며 이를 클릭할 시 해당 버전으로 자동 업데이트 됩니다.
 
-### HELP I DONT WANT UNITY 2018 .NET 4.5
-
-The 1.0.0 release and above will target .net 4.5 and unity 2018, if you need to support earlier versions of unity then use the previous 0.* release stream.
-
-## Installation
-
-You can take the unitypackage installation file from the relevent release.
-
-- EcsRx.Unity.unitypackage
-
-The package contains a wrapper around the **Core** framework and some unity helpers. The core is provided as dlls which are built for release, if you want/need to access the debug versions pull down the [EcsRx/EcsRx](https://github.com/EcsRx/ecsrx) master version and build for debug and use those dlls.
-
-## Quick Start
-
-- Install EcsRx.Unity package
-- Install Zenject
-- Install UniRx 
-
-You will ultimately need to create a `SceneContext` from *Zenject* then create an your own implementation of `EcsRxApplicationBehaviour` where you can setup your systems and entities.
-
-Much like any other ECS implementation you have the notion of entities (`IEntity`), components (`IComponent`) and systems (`ISystem`), although there are a few types of systems which you can implement based upon your needs, check out the docs folder for more information on these subjects as its more than just a 1 liner.
-
-## Docs
-
-- [EcsRx Core Docs](https://github.com/EcsRx/ecsrx/tree/master/docs)
-- [EcsRx Unity Docs](/docs)
-
-If you have any problems, or feel that you are still unsure of something head on over to our [Discord Channel](https://discord.gg/bS2rnGz).
+[EcsRx/ecsrx.unity]: https://github.com/EcsRx/ecsrx.unity
+[유니티]: https://unity3d.com/
+[유니티 테크놀로지]: https://unity3d.com/
+[최신-릴리즈]: https://www.npmjs.com/package/com.bckworks.extern.unity.ecsrx
+[프로젝트-매니페스트]: https://docs.unity3d.com/Manual/upm-manifestPrj.html
