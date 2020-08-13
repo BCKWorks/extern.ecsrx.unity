@@ -2,7 +2,7 @@
   "name": "com.intervr.unity.extern.ecsrx",
   "displayName": "EcsRx of iNTERVR Unity3D External SDK",
   "description": "A simple framework for unity using the ECS paradigm but with unirx for fully reactive systems.",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "unity": "2019.4",
   "keywords": [
   ],
