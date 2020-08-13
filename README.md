@@ -36,15 +36,15 @@ EcsRx는 iNTERVR의 외부에서 [유니티]를 기반으로 하여 제작된 �
 {
   "scopedRegistries": [
     {
-      "name": "BCKWorks",
+      "name": "iNTERVR",
       "url": "https://registry.npmjs.org/",
       "scopes": [
-        "com.bckworks"
+        "com.intervr"
       ]
     }
   ],
   "dependencies": {
-    "com.bckworks.extern.unity.ecsrx":  "X.Y.Z",
+    "com.intervr.unity.extern.ecsrx":  "X.Y.Z",
     ...
   }
 }
