@@ -1,11 +1,10 @@
 {
-  "name": "com.intervr.unity.extern.ecsrx",
-  "displayName": "EcsRx of iNTERVR Unity3D External SDK",
+  "name": "com.intervr.ts.ecsrx.unity",
+  "displayName": "iNTERVR Tech Stack EcsRx Unity",
   "description": "A simple framework for unity using the ECS paradigm but with unirx for fully reactive systems.",
-  "version": "1.5.0",
-  "unity": "2019.4",
-  "keywords": [
-  ],
+  "version": "1.6.0",
+  "unity": "2020.1",
+  "keywords": [],
   "homepage": "https://github.com/iNTERVR/unity.extern.ecsrx#readme",
   "bugs": {
     "url": "https://github.com/iNTERVR/unity.extern.ecsrx/issues"
@@ -21,9 +20,9 @@
     "url": "https://github.com/iNTERVR"
   },
   "dependencies": {
-    "com.intervr.extern.ecsrx": "1.3.0",
-    "com.intervr.unity.extern.unirx": "1.3.0",
-    "com.intervr.unity.extern.zenject": "1.5.0"
+    "com.intervr.ts.ecsrx": "1.4.0",
+    "com.intervr.ts.unirx": "1.4.0",
+    "com.intervr.ts.zenject": "1.6.0"
   },
   "files": [
     "*.md",
