@@ -1,6 +1,12 @@
 # Changelog
 All notable changes to this package will be documented in this file.
 
+## [1.6.0] - 2020-08-15
+
+### Changed
+
+- Change entire namespace to 'InterVR.TS.EcsRx.Unity'
+
 ## [1.5.0] - 2020-08-13
 
 ### Fixed
