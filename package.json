@@ -5,13 +5,13 @@
   "version": "1.6.0",
   "unity": "2020.1",
   "keywords": [],
-  "homepage": "https://github.com/iNTERVR/unity.extern.ecsrx#readme",
+  "homepage": "https://github.com/iNTERVR/TS.EcsRx.Unity#readme",
   "bugs": {
-    "url": "https://github.com/iNTERVR/unity.extern.ecsrx/issues"
+    "url": "https://github.com/iNTERVR/TS.EcsRx.Unity/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/iNTERVR/unity.extern.ecsrx.git#upm"
+    "url": "git+https://github.com/iNTERVR/TS.EcsRx.Unity.git#upm"
   },
   "license": "MIT",
   "author": {
