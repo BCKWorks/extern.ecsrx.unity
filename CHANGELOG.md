@@ -1,6 +1,12 @@
 # Changelog
 All notable changes to this package will be documented in this file.
 
+## [1.7.0] - 2020-08-17
+
+### Changed
+
+- Register As Entity has been abstract class
+
 ## [1.6.0] - 2020-08-15
 
 ### Changed
