@@ -18,7 +18,7 @@ using Zenject;
 
 namespace EcsRx.UnityEditor.MonoBehaviours
 {
-    public class RegisterAsEntity : MonoBehaviour
+    public abstract class RegisterAsEntity : MonoBehaviour, IConvertToEntity
     {
         public IEntityDatabase EntityDatabase { get; private set; }
 
@@ -39,10 +39,18 @@ namespace EcsRx.UnityEditor.MonoBehaviours
             else
             { collectionToUse = EntityDatabase.GetCollection(CollectionId); }
 
-            var createdEntity = collectionToUse.CreateEntity();
-            createdEntity.AddComponents(new ViewComponent { View = gameObject });
-            SetupEntityBinding(createdEntity, collectionToUse);
-            SetupEntityComponents(createdEntity);
+            var entityView = gameObject.GetComponent<EntityView>();
+            if (entityView != null)
+            {
+                SetupEntityComponents(entityView.Entity);
+            }
+            else
+            {
+                var createdEntity = collectionToUse.CreateEntity();
+                createdEntity.AddComponents(new ViewComponent { View = gameObject });
+                SetupEntityBinding(createdEntity, collectionToUse);
+                SetupEntityComponents(createdEntity);
+            }
 
             Destroy(this);
         }
@@ -77,6 +85,11 @@ namespace EcsRx.UnityEditor.MonoBehaviours
             {
                 component.Convert(entity);
             }
+        }
+
+        public virtual void Convert(IEntity entity, IComponent component = null)
+        {
+            Destroy(this);
         }
     }
 }
