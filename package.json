@@ -20,7 +20,7 @@
     "url": "https://github.com/iNTERVR"
   },
   "dependencies": {
-    "com.intervr.ts.ecsrx": "1.4.0",
+    "com.intervr.ts.ecsrx": "1.4.1",
     "com.intervr.ts.unirx": "1.4.0",
     "com.intervr.ts.zenject": "1.6.0"
   },
