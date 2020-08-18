@@ -2,7 +2,7 @@
   "name": "com.intervr.ts.ecsrx.unity",
   "displayName": "iNTERVR Tech Stack EcsRx Unity",
   "description": "A simple framework for unity using the ECS paradigm but with unirx for fully reactive systems.",
-  "version": "1.7.0",
+  "version": "1.7.1",
   "unity": "2020.1",
   "keywords": [],
   "homepage": "https://github.com/iNTERVR/TS.EcsRx.Unity#readme",
