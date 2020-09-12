@@ -1,6 +1,12 @@
 # Changelog
 All notable changes to this package will be documented in this file.
 
+## [1.7.3] - 2020-09-12
+
+### Changed
+
+- Update dependency
+
 ## [1.7.2] - 2020-08-18
 
 ### Changed
