@@ -92,6 +92,11 @@ namespace EcsRx.Zenject.Dependencies
         public void Unbind(Type type)
         { _container.Unbind(type); }
 
+        public void UnbindId(Type fromType, Type toType, string name = null)
+        {
+            _container.UnbindId(fromType, toType, name);
+        }
+
         public IEnumerable ResolveAll(Type type)
         { return _container.ResolveAllOf(type); }
 

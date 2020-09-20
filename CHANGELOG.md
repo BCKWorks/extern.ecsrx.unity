@@ -1,6 +1,12 @@
 # Changelog
 All notable changes to this package will be documented in this file.
 
+## [1.8.1] - 2020-09-20
+
+### Added
+
+- ZenjectDependencyContainer: UnbindId(Type fromType, Type toType, string name = null)
+
 ## [1.8.0] - 2020-09-12
 
 ### Changed
