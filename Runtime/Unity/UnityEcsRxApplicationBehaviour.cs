@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 using System.Linq;
 using EcsRx.Collections;
 using EcsRx.Collections.Database;
@@ -33,6 +34,13 @@ namespace EcsRx.Unity
         
         protected List<IEcsRxPlugin> _plugins { get; } = new List<IEcsRxPlugin>();
 
+        protected virtual IEnumerator ApplicationStartedAsync()
+        {
+            yield return null;
+            ApplicationStarted();
+            Started = true;
+        }
+
         protected abstract void ApplicationStarted();
 
         public bool Started { get; private set; }
@@ -46,9 +54,7 @@ namespace EcsRx.Unity
             BindSystems();
             StartPluginSystems();
             StartSystems();
-            ApplicationStarted();
-
-            Started = true;
+            StartCoroutine(ApplicationStartedAsync());
         }
         
         public virtual void StopApplication()

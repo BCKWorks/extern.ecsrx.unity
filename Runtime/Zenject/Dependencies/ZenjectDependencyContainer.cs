@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.Collections.Generic;
 using System.Linq;
 using EcsRx.Infrastructure.Dependencies;
 using EcsRx.Unity.Dependencies;
@@ -13,6 +14,8 @@ namespace EcsRx.Zenject.Dependencies
     {
         private readonly DiContainer _container;
 
+        List<IDependencyModule> modules = new List<IDependencyModule>();
+
         public ZenjectDependencyContainer(DiContainer container)
         {
             _container = container;
@@ -23,7 +26,50 @@ namespace EcsRx.Zenject.Dependencies
 
         public void LoadModule(IDependencyModule module)
         {
+            if (modules.Contains(module))
+            {
+                Debug.LogWarning("Duplicated module loaded");
+            }
+            else
+            {
+                modules.Add(module);
+            }
+
             module.Setup(this);
+        }
+
+        public IEnumerator InitializeModule(IDependencyModule module)
+        {
+            yield return module.Initialize(this);
+        }
+
+        public IEnumerator InitializeModules()
+        {
+            foreach (var module in modules)
+            {
+                yield return InitializeModule(module);
+            };
+        }
+
+        public void UnloadModule(IDependencyModule module, bool dontRemove = true)
+        {
+            if (!modules.Contains(module))
+                return;
+
+            module.Shutdown(this);
+            
+            if (!dontRemove)
+                modules.Remove(module);
+        }
+
+        public void UnloadModules()
+        {
+            modules.Reverse();
+            foreach (var module in modules)
+            {
+                UnloadModule(module);
+            };
+            modules.Clear();
         }
 
         public object NativeContainer => _container;
