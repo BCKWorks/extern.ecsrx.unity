@@ -1,6 +1,12 @@
 # Changelog
 All notable changes to this package will be documented in this file.
 
+## [1.9.0] - 2021-01-17
+
+### Added
+
+- Plugin load/unload and async initializing
+
 ## [1.8.1] - 2020-09-20
 
 ### Added
