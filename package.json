@@ -2,7 +2,7 @@
   "name": "com.intervr.ts.ecsrx.unity",
   "displayName": "iNTERVR Tech Stack EcsRx for Unity",
   "description": "A simple framework for unity using the ECS paradigm but with unirx for fully reactive systems.",
-  "version": "1.9.0",
+  "version": "1.9.1",
   "unity": "2020.2",
   "keywords": [],
   "homepage": "https://github.com/iNTERVR/TS.EcsRx.Unity#readme",
@@ -20,9 +20,9 @@
     "url": "https://github.com/iNTERVR"
   },
   "dependencies": {
-    "com.intervr.ts.ecsrx": "1.7.0",
-    "com.intervr.ts.zenject": "1.6.2",
-    "com.intervr.ts.unirx": "1.4.0"
+    "com.intervr.ts.ecsrx": "1.7.1",
+    "com.intervr.ts.zenject": "1.6.3",
+    "com.intervr.ts.unirx": "1.4.1"
   },
   "files": [
     "*.md",
