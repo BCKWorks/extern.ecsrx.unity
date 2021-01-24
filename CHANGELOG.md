@@ -1,6 +1,12 @@
 # Changelog
 All notable changes to this package will be documented in this file.
 
+## [2.0.1] - 2021-01-24
+
+### Changed
+
+- Application Started flag is changed private to protected.
+
 ## [2.0.0] - 2021-01-19
 
 ### Removed

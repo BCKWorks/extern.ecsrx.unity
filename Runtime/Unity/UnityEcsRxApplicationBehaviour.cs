@@ -38,12 +38,11 @@ namespace EcsRx.Unity
         {
             yield return null;
             ApplicationStarted();
-            Started = true;
         }
 
         protected abstract void ApplicationStarted();
 
-        public bool Started { get; private set; }
+        public bool Started { get; protected set; }
         
         public virtual void StartApplication()
         {
