@@ -26,14 +26,5 @@ namespace EcsRx.Unity.Extensions
             var viewComponent = entity.GetComponent<ViewComponent>();
             viewComponent.View = gameObject;
         }
-
-        public static void ConvertEntity(this GameObject gameObject, IEntity entity, IComponent component = null)
-        {
-            var monoComponents = gameObject.GetComponents<IConvertToEntity>();
-            foreach (var monoComponent in monoComponents)
-            {
-                monoComponent.Convert(entity, component);
-            }
-        }
     }
 }

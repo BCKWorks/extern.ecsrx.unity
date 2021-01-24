@@ -1,6 +1,12 @@
 # Changelog
 All notable changes to this package will be documented in this file.
 
+## [2.2.0] - 2021-01-24
+
+### Remove
+
+- Remove ConvertToEntity extention
+
 ## [2.1.0] - 2021-01-24
 
 ### Changed
