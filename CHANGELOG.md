@@ -1,6 +1,12 @@
 # Changelog
 All notable changes to this package will be documented in this file.
 
+## [2.1.0] - 2021-01-24
+
+### Changed
+
+- Register As Entity changed IConvertToEntity
+
 ## [2.0.1] - 2021-01-24
 
 ### Changed

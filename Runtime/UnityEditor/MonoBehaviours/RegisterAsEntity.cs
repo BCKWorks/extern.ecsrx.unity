@@ -87,7 +87,7 @@ namespace EcsRx.UnityEditor.MonoBehaviours
             }
         }
 
-        public virtual void Convert(IEntity entity, IComponent component = null)
+        public virtual void Convert(IEntity entity)
         {
             Destroy(this);
         }
